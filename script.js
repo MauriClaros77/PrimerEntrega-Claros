@@ -10,10 +10,10 @@ let promediosAlumnos = 0
 let totalAlumnos = 0
 let alumnosAprobados = 0
 let alumnosDesaprobados = 0
-let maxAlum
-let maxProm
-let minAlum
-let minProm
+let maxAlum = ""
+let maxProm = 0
+let minAlum = ""
+let minProm = 0
 
 function promedioAlumno(n1, n2, n3) {
     return notaFinal = (n1 + n2 + n3) / 3
@@ -38,28 +38,29 @@ while (opcion == "si") {
     informe(alumno, promedio)
     if (promedio >= 7 && promedio <= 10) {
         alumnosAprobados++
-    } else if (promedio >= 0 && promedio < 7){
+    } else if (promedio >= 0 && promedio < 7) {
         alumnosDesaprobados++
     }
 
-    if (flag = 0) {
+    if (flag === 0) {
         maxAlum = alumno
         maxProm = promedio
         minAlum = alumno
         minProm = promedio
         flag = 1
     } else {
-        if (promedio>maxProm) {
+        if (promedio > maxProm) {
             maxAlum = alumno
             maxProm = promedio
-        } else if(promedio<minAlum){
+        } 
+        else if (promedio < minProm) {
             minAlum = alumno
             minProm = promedio
         }
     }
     opcion = prompt("Desea Ingresar un Alumno y sus notas \nResponder: si o no")
 }
-promedioCurso=promediosAlumnos/totalAlumnos
-alert("El total de Alumnos son: " + totalAlumnos +" \nEl total de alumnos Aprobados son: "+ alumnosAprobados +" \nEl total de Alumnos Desaprobados son: " + alumnosDesaprobados + "\n El Promedio total del Curso es de:" + promedioCurso)
-alert("El alumno " + maxAlum + "obtubo el promedio mas ALTO con una nota de: " + maxProm + "\nEl alumno " + minAlum + "obtubo el promedio mas BAJO con una nota de: " + minProm)
+promedioCurso = promediosAlumnos / totalAlumnos
+alert("El total de Alumnos son: " + totalAlumnos + " \nEl total de alumnos Aprobados son: " + alumnosAprobados + " \nEl total de Alumnos Desaprobados son: " + alumnosDesaprobados + " \n El Promedio total del Curso es de:" + promedioCurso)
+alert("El alumno " + maxAlum + " obtubo el promedio mas ALTO con una nota de: " + maxProm + "\nEl alumno " + minAlum + " obtubo el promedio mas BAJO con una nota de: " + minProm)
 
